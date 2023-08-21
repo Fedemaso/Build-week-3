@@ -1,9 +1,40 @@
+import { IUser } from './../interfaces/iuser';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CrudService {
+  private apiUrl = environment.BE_URL;
+  private key = environment.API_KEY;
 
-  constructor() { }
+  constructor(private http: HttpClient, private router: Router) {}
+
+  getAllUsers() {
+    return this.http.get<IUser[]>(this.apiUrl + 'profile/', {
+      headers: { Authorization: [this.key] },
+    });
+  }
+
+  getMeUsers() {
+    return this.http.get<IUser>(this.apiUrl + 'profile/me', {
+      headers: { Authorization: [this.key] },
+    });
+  }
+
+  getUsersById(id: string) {
+    return this.http.get<IUser>(this.apiUrl + 'profile/' + id, {
+      headers: { Authorization: [this.key] },
+    });
+  }
+
+  updateUser(data: IUser) {
+    return this.http.put<IUser>(this.apiUrl + 'profile/', {
+      headers: { Authorization: [this.key] },
+      data,
+    });
+  }
 }
