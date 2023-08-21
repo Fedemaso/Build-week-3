@@ -1,11 +1,86 @@
 <div class="card mb-2">
-  <img src="..." class="card-img-top" alt="..." />
-  <div class="card-body">
-    <h5 class="card-title">Consigliato per te</h5>
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div>
+    <h5>Consigliato per te</h5>
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-flex">
+            <div class="carousel-cards" class="card m-2 d-block">
+              <div class="card-body">
+                <h5 class="card-title">In quale settore lavori?</h5>
+                <p class="card-text">
+                  Gli utenti che aggiungono un settore ricevono fino a 2,5 volte
+                  più visualizzazioni del profilo.
+                </p>
+                <a href="#" class="btn btn-outline-secondary"
+                  >Aggiungi settore</a
+                >
+              </div>
+            </div>
+
+            <div class="carousel-cards" class="card m-2 d-block">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Quale scuola o università hai frequentato?
+                </h5>
+                <p class="card-text">
+                  Gli utenti che includono una scuola o università ricevono fino
+                  a 2,2 volte più visualizzazioni del profilo.
+                </p>
+                <a href="#" class="btn btn-outline-secondary"
+                  >Aggiungi titolo di studio</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="d-flex">
+            <div class="carousel-cards" class="card m-2 d-block">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Aggiungi le tue competenze per mostrare la tua esperienza
+                </h5>
+                <p class="card-text">
+                  Gli utenti che indicano almeno una competenza ricevono fino a
+                  4 volte più visualizzazioni del profilo.
+                </p>
+                <a href="#" class="btn btn-outline-secondary"
+                  >Aggiungi una competenza</a
+                >
+              </div>
+            </div>
+
+            <div class="carousel-cards" class="card m-2 d-block">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Scrivi un riepilogo per mettere in evidenza la tua personalità
+                  o l'esperienza lavorativa
+                </h5>
+                <p class="card-text">
+                  Gli utenti che includono un riepilogo ricevono fino a 3,9
+                  volte più visualizzazioni del profilo.
+                </p>
+                <a href="#" class="btn btn-outline-secondary"
+                  >Aggiungi un riepilogo</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          id="control-buttons"
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
   </div>
 </div>

@@ -41,5 +41,9 @@ testem.log
 .DS_Store
 Thumbs.db
 
+
 #user token
 /src/environments
+
+#css ignorato per sass
+/assets/css
