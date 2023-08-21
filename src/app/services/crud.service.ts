@@ -8,31 +8,31 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class CrudService {
-  private apiUrl = environment.BE_URL;
-  private key = environment.API_KEY;
+  private apiUrl: string = environment.BE_URL;
+  private key: string = environment.API_KEY;
 
   constructor(private http: HttpClient, private router: Router) {}
 
   getAllUsers() {
-    return this.http.get<IUser[]>(this.apiUrl + 'profile/', {
+    return this.http.get<IUser[]>(this.apiUrl, {
       headers: { Authorization: [this.key] },
     });
   }
 
   getMeUsers() {
-    return this.http.get<IUser>(this.apiUrl + 'profile/me', {
+    return this.http.get<IUser>(this.apiUrl + 'me', {
       headers: { Authorization: [this.key] },
     });
   }
 
   getUsersById(id: string) {
-    return this.http.get<IUser>(this.apiUrl + 'profile/' + id, {
+    return this.http.get<IUser>(this.apiUrl + id, {
       headers: { Authorization: [this.key] },
     });
   }
 
   updateUser(data: IUser) {
-    return this.http.put<IUser>(this.apiUrl + 'profile/', {
+    return this.http.put<IUser>(this.apiUrl, {
       headers: { Authorization: [this.key] },
       data,
     });
