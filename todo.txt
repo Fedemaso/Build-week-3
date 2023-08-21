@@ -8,7 +8,7 @@ componenti:
   - cause
   - compenteze
   - consigliato per te
-  - esperienza
+  - esperienza   NON STATICO
   - formazione
   - interessi
   - lingue
