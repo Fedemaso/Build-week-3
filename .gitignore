@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 #user token
-src/environments/environments.ts
+/src/environments
