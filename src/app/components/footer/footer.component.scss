@@ -1,0 +1,19 @@
+* {
+  font-size: 0.95em;
+  font-weight: 800;
+  p {
+    font-weight: 300;
+  }
+  a {
+    color: #00000099;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #0a66c2;
+    text-decoration: underline !important;
+  }
+  :visited {
+    color: #8433cc99;
+  }
+}

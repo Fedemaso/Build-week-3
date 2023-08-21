@@ -1,0 +1,18 @@
+* {
+  font-size: 0.95em;
+  font-weight: 800;
+}
+* p {
+  font-weight: 300;
+}
+* a {
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+}
+* a:hover {
+  color: #0a66c2;
+  text-decoration: underline !important;
+}
+* :visited {
+  color: rgba(132, 51, 204, 0.6);
+}/*# sourceMappingURL=footer.component.css.map */
