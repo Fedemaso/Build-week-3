@@ -1,4 +1,3 @@
-service per crud
 scss basic
 componenti:
 - nav bar
@@ -14,3 +13,7 @@ componenti:
   - interessi
   - lingue
 -footer
+
+
+** OK FATTI **
+service per crud OK FATTO
