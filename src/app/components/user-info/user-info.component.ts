@@ -10,7 +10,7 @@ export class UserInfoComponent {
   constructor(private crudSrv: CrudService) {}
 
   user!: any;
-  allUsers!:any;
+  allUsers!: any;
 
   ngOnInit() {
     this.crudSrv.getMeUsers().subscribe((res) => {
@@ -18,9 +18,9 @@ export class UserInfoComponent {
       console.log(this.user);
     });
 
-    this.crudSrv.getAllUsers().subscribe((res) => {
-      this.allUsers = res;
-      console.log(this.allUsers)
-    })
+    // this.crudSrv.getAllUsers().subscribe((res) => {
+    //   this.allUsers = res;
+    //   console.log(this.allUsers)
+    // })
   }
 }
