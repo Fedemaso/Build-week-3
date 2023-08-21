@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { UserPageComponent } from './components/user-page/user-page.component';
+import { UserPageComponent } from './pages/user-page/user-page.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
@@ -19,6 +19,7 @@ import { CompetenzeComponent } from './components/competenze/competenze.componen
 import { LingueComponent } from './components/lingue/lingue.component';
 import { InteressiComponent } from './components/interessi/interessi.component';
 import { CauseComponent } from './components/cause/cause.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -37,14 +38,11 @@ import { CauseComponent } from './components/cause/cause.component';
     CompetenzeComponent,
     LingueComponent,
     InteressiComponent,
-    CauseComponent
+    CauseComponent,
+    HomeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
