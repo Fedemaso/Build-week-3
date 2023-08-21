@@ -20,7 +20,7 @@ export class CrudService {
   }
 
   getMeUsers() {
-    return this.http.get<IUser>(this.apiUrl + 'me', {
+    return this.http.get<IUser>(this.apiUrl + 'profile/me', {
       headers: { Authorization: [this.key] },
     });
   }
