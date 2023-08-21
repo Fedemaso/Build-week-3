@@ -9,13 +9,13 @@ import { CrudService } from 'src/app/services/crud.service';
 export class UserInfoComponent {
   constructor(private crudSrv: CrudService) {}
 
-  users!: any;
+  user!: any;
   allUsers!:any;
 
   ngOnInit() {
     this.crudSrv.getMeUsers().subscribe((res) => {
-      this.users = res;
-      console.log(this.users);
+      this.user = res;
+      console.log(this.user);
     });
 
     this.crudSrv.getAllUsers().subscribe((res) => {

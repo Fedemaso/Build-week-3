@@ -1,11 +1,18 @@
 <div class="card mb-2">
   <img src="..." class="card-img-top" alt="..." />
   <div class="card-body">
-    <h5 class="card-title">NOME E COGNOME</h5>
+    <h5 class="card-title">{{ user.name }} {{ user.surname }}</h5>
     <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+      {{ user.title }}
     </p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <p>{{ user.bio }}</p>
+    <p>
+      {{ user.area }}
+    </p>
+    <a>Informazioni di contatto</a>
+
+    <a href="#" class="btn btn-primary">Disponibile per</a>
+    <a href="#" class="btn btn-outline-primary">Aggiungi sezione del profilo</a>
+    <a href="#" class="btn btn-outline-secondary">Altro</a>
   </div>
 </div>
