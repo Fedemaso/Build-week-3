@@ -21,6 +21,7 @@ import { InteressiComponent } from './components/interessi/interessi.component';
 import { CauseComponent } from './components/cause/cause.component';
 import { HomeComponent } from './pages/home/home.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
