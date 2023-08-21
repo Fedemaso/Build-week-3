@@ -14,7 +14,7 @@ export class CrudService {
   constructor(private http: HttpClient, private router: Router) {}
 
   getAllUsers() {
-    return this.http.get<IUser[]>(this.apiUrl, {
+    return this.http.get<IUser[]>(this.apiUrl + "profile/", {
       headers: { Authorization: [this.key] },
     });
   }
