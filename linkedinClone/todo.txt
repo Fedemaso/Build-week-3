@@ -1,0 +1,16 @@
+service per crud
+scss basic
+componenti:
+- nav bar
+- user page:
+  - analisi
+  - aside
+  - attivita
+  - cause
+  - compenteze
+  - consigliato per te
+  - esperienza
+  - formazione
+  - interessi
+  - lingue
+-footer
