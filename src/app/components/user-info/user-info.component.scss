@@ -1,0 +1,25 @@
+.profileImageContainer  {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-top: 20px;
+  .profileImage{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
+}
+
+.area {
+  color: grey;
+}
+
+.info{
+  color: blue;
+  margin-left: 10px;
+}
+
+.button {
+  margin-right: 15px;
+}
