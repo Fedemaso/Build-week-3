@@ -1,56 +1,39 @@
 img {
-  width: 165% !important;
-  margin-right: 1,5em !important;
-  margin-left: 6em !important;
-
+  margin-right: 1, 5em !important;
 }
-  #ciao{
-    width: 50px;
-    margin-right: 1,5em !important;
+#ciao {
+  width: 35px;
+  margin-right: 1, 5em !important;
+}
+
+li {
+  margin: 0 1.2em;
+  cursor: pointer;
+}
+
+.search {
+  top: 10%;
+  left: 3%;
+}
+
+input {
+  padding-left: 1.5em;
+  background-color: aliceblue;
+}
+
+// .cursore {
+// }
+.dropdown {
+  margin: 0 1.2em;
+  p {
+    margin: 0;
   }
 
-  #cerca {
-    margin-left: 6.5em !important;
-    margin-top: 0;
+  a {
+    padding: 0;
   }
-
-  #home{
-    margin-left: 7.5em !important;
-    margin-right: 1.5em !important;
+  div {
+    display: flex;
+    flex-direction: column;
   }
-
-  #rete  {
-    margin-left: 1.5em !important;
-    margin-right: 1.5em !important;
-  }
-
-  #lavoro {
-    margin-left: 1.5em !important;
-    margin-right: 1.5em !important;
-  }
-
-
-  #messaggi {
-    margin-left: 1.5em !important;
-    margin-right: 1.5em !important;
-  }
-
-  #notifiche {
-    margin-left: 1.5em !important;
-    margin-right: 1.5em !important;
-  }
-
-  #tu{
-    margin-left: 1.5em !important;
-    margin-right: 1.5em !important;
-  }
-
-
-  .cursore{
-    cursor: pointer;
-  }
-
-#aziende{
-  margin-left: 2.5em !important;
-  margin-right: 2.5em !important;
 }
