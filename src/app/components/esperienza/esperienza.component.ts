@@ -25,6 +25,7 @@ export class EsperienzaComponent {
   user!: any;
   addExp: boolean = false;
   formData!: IExperience;
+  exp!: any;
 
   ngOnInit() {
     this.crudSrv.user$.subscribe((res) => {
@@ -56,4 +57,7 @@ export class EsperienzaComponent {
       console.log('NEW exp in expComp:', res);
     });
   }
+
+
+
 }
