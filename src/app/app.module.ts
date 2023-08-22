@@ -21,6 +21,7 @@ import { CauseComponent } from './components/cause/cause.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { environment } from 'src/environments/environment';
     NgbModule,
     HttpClientModule,
     NgbDatepickerModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

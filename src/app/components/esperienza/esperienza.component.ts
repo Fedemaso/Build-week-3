@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { IExperience } from './../../interfaces/iexperience';
+import { Component, ViewChild } from '@angular/core';
 import { CrudService } from 'src/app/services/crud.service';
 import { IUser } from 'src/app/interfaces/iuser';
-import { IExperience } from 'src/app/interfaces/iexperience';
 import { UserInfoComponent } from '../user-info/user-info.component';
 import {
   ModalDismissReasons,
@@ -18,11 +18,13 @@ import { NgForm } from '@angular/forms';
   // imports: [NgbDatepickerModule],
 })
 export class EsperienzaComponent {
+  @ViewChild('f', { static: true }) form!: NgForm;
   constructor(private crudSrv: CrudService, private modalService: NgbModal) {}
 
   allTheExperiences!: any;
   user!: any;
   addExp: boolean = false;
+  formData!: IExperience;
 
   ngOnInit() {
     this.crudSrv.user$.subscribe((res) => {
@@ -48,10 +50,10 @@ export class EsperienzaComponent {
   // }
 
   submit(f: NgForm) {
-    // this.formData = f.form.value;
-    // console.log('this Form', this.formData, typeof this.formData);
-    // this.authSrv.login(this.formData).subscribe((res) => {
-    //   console.log('loggato');
-    // });
+    this.formData = f.form.value;
+    console.log('this Form', this.formData, typeof this.formData);
+    this.crudSrv.postExperience(this.formData).subscribe((res) => {
+      console.log('NEW exp in expComp:', res);
+    });
   }
 }

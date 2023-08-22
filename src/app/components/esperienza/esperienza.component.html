@@ -22,52 +22,80 @@
         ></button>
       </div>
       <div class="modal-body">
+        <h1>Aggiungi i dati delle tua esperienza</h1>
         <form (ngSubmit)="submit(f)" #f="ngForm">
-          <input type="text" />
-          <div class="mb-3">
-            <label for="startExp">Data inizio esperienza</label>
-            <div class="input-group">
-              <input
-                id="startExp"
-                class="form-control"
-                placeholder="yyyy-mm-dd"
-                name="dp"
-                ngbDatepicker
-                #dp="ngbDatepicker"
-              />
-              <button
-                class="btn btn-outline-secondary bi bi-calendar3"
-                (click)="dp.toggle()"
-                type="button"
-              ></button>
-            </div>
+          <label for="role">Ruolo</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Ruolo"
+            ngModel
+            name="role"
+          />
+          <label for="company">Compagnia</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Compagnia"
+            ngModel
+            name="company"
+          />
+          <!-- <div class="mb-3"> -->
+          <label for="startDate">Data inizio esperienza</label>
+          <div class="input-group">
+            <input
+              id="startDate"
+              class="form-control"
+              placeholder="yyyy-mm-dd"
+              name="startDate"
+              ngbDatepicker
+              #startDate="ngbDatepicker"
+            />
+            <button
+              class="btn btn-outline-secondary bi bi-calendar3"
+              (click)="startDate.toggle()"
+              type="button"
+            ></button>
           </div>
-          <div class="mb-3">
-            <label for="endExp">Data fine esperienza</label>
-            <div class="input-group">
-              <input
-                id="endExp"
-                class="form-control"
-                placeholder="yyyy-mm-dd"
-                name="dp"
-                ngbDatepicker
-                #dp="ngbDatepicker"
-              />
-              <button
-                class="btn btn-outline-secondary bi bi-calendar3"
-                (click)="dp.toggle()"
-                type="button"
-              ></button>
-            </div>
+          <!-- </div> -->
+          <!-- <div class="mb-3"> -->
+          <label for="endDate">Data fine esperienza</label>
+          <div class="input-group">
+            <input
+              id="endDate"
+              class="form-control"
+              placeholder="yyyy-mm-dd"
+              name="endDate"
+              ngbDatepicker
+              #endDate="ngbDatepicker"
+            />
+            <button
+              class="btn btn-outline-secondary bi bi-calendar3"
+              (click)="endDate.toggle()"
+              type="button"
+            ></button>
           </div>
+          <!-- </div> -->
+          <label for="description">Descrizione</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Descrizione"
+            ngModel
+            name="description"
+          />
+          <label for="Area">Luogo/Territorio</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Luogo/Territorio"
+            ngModel
+            name="Area"
+          />
         </form>
       </div>
       <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-outline-dark"
-          (click)="modal.close('Save click')"
-        >
+        <button type="button" class="btn btn-outline-dark" (click)="submit(f)">
           Save
         </button>
       </div>

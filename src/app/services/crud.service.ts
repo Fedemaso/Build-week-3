@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { IExperience } from '../interfaces/iexperience';
-import { BehaviorSubject, tap } from 'rxjs';
+import { BehaviorSubject, map, tap } from 'rxjs';
 import { Form } from '@angular/forms';
 
 @Injectable({
@@ -15,6 +15,7 @@ export class CrudService {
   private key: string = environment.API_KEY;
   private authSubject = new BehaviorSubject<null | IUser>(null);
   user$ = this.authSubject.asObservable();
+  userID = this.user$.pipe(map((_id) => _id));
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -60,7 +61,8 @@ export class CrudService {
 
   postExperience(data: IExperience) {
     return this.http.post<IExperience>(
-      this.apiUrl + 'profile/' + this.authSubject + '/experiences',
+      this.apiUrl + 'profile/' + this.userID + '/experiences',
+      data,
       {
         headers: { Authorization: [this.key] },
       }
