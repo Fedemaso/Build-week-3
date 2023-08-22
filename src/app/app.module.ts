@@ -22,6 +22,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
+import { EditExperienceComponent } from './pages/edit-experience/edit-experience.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { FormsModule } from '@angular/forms';
     InteressiComponent,
     CauseComponent,
     HomeComponent,
+    EditExperienceComponent,
   ],
   imports: [
     BrowserModule,
