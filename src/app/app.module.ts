@@ -20,6 +20,7 @@ import { InteressiComponent } from './components/interessi/interessi.component';
 import { CauseComponent } from './components/cause/cause.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import {environment} from 'src/environments/environment'
 
 @NgModule({
   declarations: [
