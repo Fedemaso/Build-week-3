@@ -30,10 +30,11 @@ export class EsperienzaComponent {
   ngOnInit() {
     this.crudSrv.user$.subscribe((res) => {
       this.user = res;
-    });
-    this.crudSrv.getAllTheExp(this.user._id).subscribe((res) => {
-      this.allTheExperiences = res;
-      console.log('Esperienza', this.allTheExperiences);
+      console.log('RES', this.user);
+      this.crudSrv.getAllTheExp(this.user._id).subscribe((res) => {
+        this.allTheExperiences = res;
+        console.log('Esperienza', this.allTheExperiences);
+      });
     });
   }
 
@@ -55,9 +56,9 @@ export class EsperienzaComponent {
     console.log('this Form', this.formData, typeof this.formData);
     this.crudSrv.postExperience(this.formData).subscribe((res) => {
       console.log('NEW exp in expComp:', res);
+      this.crudSrv.getAllTheExp(this.user._id).subscribe((res) => {
+        this.allTheExperiences = res;
+      });
     });
   }
-
-
-
 }

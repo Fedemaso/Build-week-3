@@ -1,3 +1,4 @@
+import { EditExperienceComponent } from './pages/edit-experience/edit-experience.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserPageComponent } from './pages/user-page/user-page.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'user',
     component: UserPageComponent,
+  },
+  {
+    path: 'user/:id',
+    component: EditExperienceComponent,
   },
 ];
 
