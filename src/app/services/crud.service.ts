@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { IExperience } from '../interfaces/iexperience';
+import { BehaviorSubject, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,8 @@ import { IExperience } from '../interfaces/iexperience';
 export class CrudService {
   private apiUrl: string = environment.BE_URL;
   private key: string = environment.API_KEY;
+  private authSubject = new BehaviorSubject<null | IUser>(null);
+  user$ = this.authSubject.asObservable();
 
 
   constructor(private http: HttpClient, private router: Router) {}
@@ -24,8 +27,11 @@ export class CrudService {
   getMeUsers() {
     return this.http.get<IUser>(this.apiUrl + 'profile/me', {
       headers: { Authorization: [this.key] },
-    });
-  }
+    }).pipe(tap((res) => {
+      this.authSubject.next(res)
+    })
+
+  )}
 
   getUsersById(id: string) {
     return this.http.get<IUser>(this.apiUrl + id, {

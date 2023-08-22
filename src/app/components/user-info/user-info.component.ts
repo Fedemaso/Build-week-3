@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { IUser } from 'src/app/interfaces/iuser';
 import { CrudService } from 'src/app/services/crud.service';
 
 @Component({
@@ -11,6 +13,7 @@ export class UserInfoComponent {
 
   user!: any;
   allUsers!: any;
+
 
   ngOnInit() {
     this.crudSrv.getMeUsers().subscribe((res) => {

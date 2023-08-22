@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CrudService } from 'src/app/services/crud.service';
 import { IUser } from 'src/app/interfaces/iuser';
 import { IExperience } from 'src/app/interfaces/iexperience';
+import { UserInfoComponent } from '../user-info/user-info.component';
 
 @Component({
   selector: 'app-esperienza',
@@ -12,11 +13,15 @@ export class EsperienzaComponent {
   constructor(private crudSrv: CrudService) {}
 
   allTheExperiences!: any
+  user!: any
 
   ngOnInit(){
-    this.crudSrv.getAllTheExp("1").subscribe((res) =>{
+    this.crudSrv.user$.subscribe((res) =>{
+      this.user = res
+    })
+    this.crudSrv.getAllTheExp(this.user._id).subscribe((res) =>{
     this.allTheExperiences = res
-    console.log(this.allTheExperiences)
+    console.log("Esperienza", this.allTheExperiences)
     })
   }
 }
