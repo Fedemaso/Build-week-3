@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { IExperience } from '../interfaces/iexperience';
 import { BehaviorSubject, tap } from 'rxjs';
+import { Form } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -51,6 +52,15 @@ export class CrudService {
   getAllTheExp(UserId: string) {
     return this.http.get<IExperience>(
       this.apiUrl + 'profile/' + UserId + '/experiences',
+      {
+        headers: { Authorization: [this.key] },
+      }
+    );
+  }
+
+  postExperience(data: IExperience) {
+    return this.http.post<IExperience>(
+      this.apiUrl + 'profile/' + this.authSubject + '/experiences',
       {
         headers: { Authorization: [this.key] },
       }
