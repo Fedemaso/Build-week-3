@@ -16,10 +16,13 @@ export class CrudService {
   private key: string = environment.API_KEY;
   private authSubject = new BehaviorSubject<null | IUser>(null);
   private authExp = new BehaviorSubject <null | IExperience>(null);
+  private authPost = new BehaviorSubject <null | IPost>(null);
   user$ = this.authSubject.asObservable();
   userID = this.user$.pipe(map((_id) => _id));
   exp$ = this.authExp.asObservable();
-  expID = this.exp$.pipe(map ((_id) => _id))
+  expID = this.exp$.pipe(map((_id) => _id))
+  post$ = this.authPost.asObservable();
+  postID = this.post$.pipe(map((_id) => _id))
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -73,15 +76,32 @@ export class CrudService {
     );
   }
 
-  getExp(){
+  getSingleExp(){
     return this.http.get<IExperience>(
-      this.apiUrl + 'post/'+ this.authExp.value?._id,
+      this.apiUrl + 'profile/'+ this.authSubject.value?._id + "/experiences/" + this.authExp.value?._id,
       {
         headers: { Authorization: [this.key] },
       }
     );
   }
 
+  updateExperience(){
+    return this.http.get<IExperience>(
+      this.apiUrl + 'profile/' + this.authSubject.value?._id + '/experiences/' + this.authExp.value?._id,
+      {
+        headers: { Authorization: [this.key] },
+      }
+    )
+  }
+
+  deleteExperience(){
+    return this.http.delete(
+      this.apiUrl + 'profile/' + this.authSubject.value?._id + '/experiences/' + this.authExp.value?._id,
+      {
+        headers: { Authorization: [this.key] },
+      }
+    )
+  }
 
   getAllThePost(){
     return this.http.get<IPost[]>(
@@ -92,6 +112,39 @@ export class CrudService {
     )
   }
 
+  postAPost(){
+    return this.http.post<IPost>(
+      this.apiUrl + "posts/",
+      {
+        headers: { Authorization: [this.key] },
+      }
+    )
+  }
 
+  getASinglePost(){
+    return this.http.get<IPost>(
+      this.apiUrl + "posts/" + this.authPost.value?._id,
+      {
+        headers: { Authorization: [this.key] },
+      }
+    )
+  }
 
+  updatePost(){
+    return this.http.put<IPost>(
+      this.apiUrl + "posts/" + this.authPost.value?._id,
+      {
+        headers: { Authorization: [this.key] },
+      }
+    )
+  }
+
+  deletePost(){
+    return this.http.delete(
+      this.apiUrl + "posts/" + this.authPost.value?._id,
+      {
+        headers: { Authorization: [this.key] },
+      }
+    )
+  }
 }
