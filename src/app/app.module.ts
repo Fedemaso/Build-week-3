@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDatepickerModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { UserPageComponent } from './pages/user-page/user-page.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -20,7 +20,7 @@ import { InteressiComponent } from './components/interessi/interessi.component';
 import { CauseComponent } from './components/cause/cause.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import {environment} from 'src/environments/environment'
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,13 @@ import {environment} from 'src/environments/environment'
     CauseComponent,
     HomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    HttpClientModule,
+    NgbDatepickerModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
