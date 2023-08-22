@@ -76,7 +76,7 @@ export class CrudService {
     );
   }
 
-  getSingleExp(){
+  getSingleExp(data: IExperience) {
     return this.http.get<IExperience>(
       this.apiUrl + 'profile/'+ this.authSubject.value?._id + "/experiences/" + this.authExp.value?._id,
       {
@@ -85,7 +85,7 @@ export class CrudService {
     );
   }
 
-  updateExperience(){
+  updateExperience(data: IExperience) {
     return this.http.get<IExperience>(
       this.apiUrl + 'profile/' + this.authSubject.value?._id + '/experiences/' + this.authExp.value?._id,
       {
@@ -112,7 +112,7 @@ export class CrudService {
     )
   }
 
-  postAPost(){
+  postAPost(data: IPost){
     return this.http.post<IPost>(
       this.apiUrl + "posts/",
       {
@@ -130,7 +130,7 @@ export class CrudService {
     )
   }
 
-  updatePost(){
+  updatePost(data: IPost){
     return this.http.put<IPost>(
       this.apiUrl + "posts/" + this.authPost.value?._id,
       {
