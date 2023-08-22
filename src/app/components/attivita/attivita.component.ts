@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CrudService } from 'src/app/services/crud.service';
 
 @Component({
   selector: 'app-attivita',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AttivitaComponent {
 
+  constructor(private crudSrv: CrudService) {}
+
+  posts!:any;
+
+
+  ngOnInit() {
+    this.crudSrv.getAllThePost().subscribe((res) => {
+      this.posts = res;
+      console.log(this.posts);
+    });
+  }
 }

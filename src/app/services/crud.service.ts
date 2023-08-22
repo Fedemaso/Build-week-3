@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { IExperience } from '../interfaces/iexperience';
 import { BehaviorSubject, map, tap } from 'rxjs';
 import { Form } from '@angular/forms';
+import { IPost } from '../interfaces/ipost';
 
 @Injectable({
   providedIn: 'root',
@@ -80,4 +81,17 @@ export class CrudService {
       }
     );
   }
+
+
+  getAllThePost(){
+    return this.http.get<IPost[]>(
+      this.apiUrl + "posts/",
+      {
+        headers: { Authorization: [this.key] },
+      }
+    )
+  }
+
+
+
 }
