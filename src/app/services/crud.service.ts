@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { IExperience } from '../interfaces/iexperience';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +11,7 @@ import { environment } from 'src/environments/environment';
 export class CrudService {
   private apiUrl: string = environment.BE_URL;
   private key: string = environment.API_KEY;
+
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -37,4 +39,13 @@ export class CrudService {
       data,
     });
   }
+
+  getAllTheExp(UserId:string) {
+    return this.http.get<IExperience>(this.apiUrl + "profile/" + UserId + "/experiences", {
+      headers: { Authorization: [this.key] }
+    })
+  }
+
+
+
 }
