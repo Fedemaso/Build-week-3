@@ -63,7 +63,6 @@ export class CrudService {
   }
 
   postExperience(data: IExperience) {
-    console.log("USERID", this.userID)
     return this.http.post<IExperience>(
       this.apiUrl + 'profile/' + this.authSubject.value?._id + '/experiences',
       data,
@@ -73,14 +72,12 @@ export class CrudService {
     );
   }
 
-  /*getExp(ExpId:string){
+  getExp(){
     return this.http.get<IExperience>(
-      this.apiUrl + 'post/' this.expID, {
-        headers: { Authorization: []}
+      this.apiUrl + 'post/'+ this.authExp.value?._id,
+      {
+        headers: { Authorization: [this.key] },
       }
-    )
+    );
   }
-
-
-*/
 }
