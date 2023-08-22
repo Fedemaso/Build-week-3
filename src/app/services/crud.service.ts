@@ -14,8 +14,11 @@ export class CrudService {
   private apiUrl: string = environment.BE_URL;
   private key: string = environment.API_KEY;
   private authSubject = new BehaviorSubject<null | IUser>(null);
+  private authExp = new BehaviorSubject <null | IExperience>(null);
   user$ = this.authSubject.asObservable();
   userID = this.user$.pipe(map((_id) => _id));
+  exp$ = this.authExp.asObservable();
+  expID = this.exp$.pipe(map ((_id) => _id))
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -60,12 +63,24 @@ export class CrudService {
   }
 
   postExperience(data: IExperience) {
+    console.log("USERID", this.userID)
     return this.http.post<IExperience>(
-      this.apiUrl + 'profile/' + this.userID + '/experiences',
+      this.apiUrl + 'profile/' + this.authSubject.value?._id + '/experiences',
       data,
       {
         headers: { Authorization: [this.key] },
       }
     );
   }
+
+  /*getExp(ExpId:string){
+    return this.http.get<IExperience>(
+      this.apiUrl + 'post/' this.expID, {
+        headers: { Authorization: []}
+      }
+    )
+  }
+
+
+*/
 }
