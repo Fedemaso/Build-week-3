@@ -1,26 +1,39 @@
 <!-- <a routerLink="home">Home</a>
 <a routerLink="user">User</a> -->
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="d-flex">
-    <a id="ciao" href="#"
-      ><img
-        src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/08/8c/5a/088c5a48-3f6a-6f9f-4307-49d4a8fdde09/AppIcon-0-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png"
-        alt=""
-    /></a>
+<nav class="navbar navbar-expand-lg bg-light justify-content-evenly">
+  <div class="d-flex align-items-center">
+    <img
+      id="ciao"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png?20140125013055"
+      alt=""
+    />
     <form class="d-flex ms-2" role="search">
-      <div>
+      <div class="position-relative">
         <input
-          id="cerca"
-          class="form-control"
+          class="form-control pe-1"
           type="search"
           placeholder="cerca"
           aria-label="Search"
         />
+        <div class="position-absolute search">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-search"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+            />
+          </svg>
+        </div>
       </div>
     </form>
   </div>
   <ul class="d-flex mb-0">
-    <li id="home" class="d-flex flex-column cursore justify-content-center">
+    <li class="d-flex flex-column cursore justify-content-center">
       <div class="d-flex d-flex justify-content-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +51,7 @@
       home
     </li>
 
-    <li id="rete" class="d-flex flex-column cursore justify-content-center">
+    <li class="d-flex flex-column cursore justify-content-center">
       <div class="d-flex d-flex justify-content-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -56,10 +69,7 @@
       rete
     </li>
 
-    <li
-      id="lavoro"
-      class="d-flex flex-column mx-2 cursore justify-content-center"
-    >
+    <li class="d-flex flex-column mx-2 cursore justify-content-center">
       <div class="d-flex d-flex justify-content-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +87,7 @@
       lavoro
     </li>
 
-    <li id="messaggi" class="d-flex flex-column cursore justify-content-center">
+    <li class="d-flex flex-column cursore justify-content-center">
       <div class="d-flex d-flex justify-content-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -98,10 +108,7 @@
       messaggi
     </li>
 
-    <li
-      id="notifiche"
-      class="d-flex flex-column cursore justify-content-center"
-    >
+    <li class="d-flex flex-column cursore justify-content-center">
       <div class="d-flex d-flex justify-content-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +135,7 @@ tu
   <li><a class="dropdown-item" href="#">Action</a></li>
 </ul> -->
 
-    <div id="tu" class="dropdown">
+    <div class="dropdown">
       <a
         class="btn btn-light dropdown-toggle d-flex justify-content-center"
         href="#"
@@ -136,42 +143,65 @@ tu
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-person-circle"
-          viewBox="0 0 16 16"
-        >
-          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-          <path
-            fill-rule="evenodd"
-            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
-          />
-        </svg>
-        <p>tu</p>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-person-circle"
+            viewBox="0 0 16 16"
+          >
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path
+              fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+            />
+          </svg>
+          <p>tu</p>
+        </div>
       </a>
 
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#"></a></li>
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h4 class="card-title">nome</h4>
-        <p class="card-text">le tue esperienze</p>
-        <a href="#" class="btn btn-primary">visualizza profilo</a>
-      </div>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#"></a></li>
+        <div class="card" style="width: 18rem">
+          <img src="..." class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">nome</h5>
+            <p class="card-text">le tue esperienze</p>
+            <a routerLink="user" class="btn btn-primary">visualizza profilo</a>
+            <h5 class="card-title">account</h5>
+            <div class="d-flex">
+              <p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-envelope-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"
+                  />
+                </svg>
+              </p>
+              <p>prova premium gratis</p>
+            </div>
+            <p>impostazioni e privacy</p>
+            <p>guida</p>
+            <p>lingua</p>
+            <h5 class="card-title">gestisci</h5>
+            <p>post e attività</p>
+            <p>account per la pubblicazione di offerte</p>
+            <p>esci</p>
+          </div>
+        </div>
+      </ul>
     </div>
   </ul>
-</div>
 
-
-
-    <!-- </li> -->
-  </ul>
-
-  <li id="aziende" class="d-flex flex-column cursore justify-content-center">
+  <li class="d-flex flex-column cursore justify-content-center">
     <div class="d-flex d-flex justify-content-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
