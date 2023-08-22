@@ -4,9 +4,8 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { IExperience } from '../interfaces/iexperience';
-import { BehaviorSubject, tap } from 'rxjs';
+import { BehaviorSubject, map, tap } from 'rxjs';
 import { Form } from '@angular/forms';
-
 
 @Injectable({
   providedIn: 'root',
@@ -16,24 +15,27 @@ export class CrudService {
   private key: string = environment.API_KEY;
   private authSubject = new BehaviorSubject<null | IUser>(null);
   user$ = this.authSubject.asObservable();
-
+  userID = this.user$.pipe(map((_id) => _id));
 
   constructor(private http: HttpClient, private router: Router) {}
 
   getAllUsers() {
-    return this.http.get<IUser[]>(this.apiUrl + "profile/", {
+    return this.http.get<IUser[]>(this.apiUrl + 'profile/', {
       headers: { Authorization: [this.key] },
     });
   }
 
   getMeUsers() {
-    return this.http.get<IUser>(this.apiUrl + 'profile/me', {
-      headers: { Authorization: [this.key] },
-    }).pipe(tap((res) => {
-      this.authSubject.next(res)
-    })
-
-  )}
+    return this.http
+      .get<IUser>(this.apiUrl + 'profile/me', {
+        headers: { Authorization: [this.key] },
+      })
+      .pipe(
+        tap((res) => {
+          this.authSubject.next(res);
+        })
+      );
+  }
 
   getUsersById(id: string) {
     return this.http.get<IUser>(this.apiUrl + id, {
@@ -48,16 +50,22 @@ export class CrudService {
     });
   }
 
-  getAllTheExp(UserId:string) {
-    return this.http.get<IExperience>(this.apiUrl + "profile/" + UserId + "/experiences", {
-      headers: { Authorization: [this.key] }
-    })
+  getAllTheExp(UserId: string) {
+    return this.http.get<IExperience>(
+      this.apiUrl + 'profile/' + UserId + '/experiences',
+      {
+        headers: { Authorization: [this.key] },
+      }
+    );
   }
 
-
-  postExperience(data:IExperience) {
-    return this.http.post<IExperience>(this.apiUrl + "profile/" + this.authSubject + "/experiences", {
-      headers: { Authorization: [this.key] }
-    })
+  postExperience(data: IExperience) {
+    return this.http.post<IExperience>(
+      this.apiUrl + 'profile/' + this.userID + '/experiences',
+      data,
+      {
+        headers: { Authorization: [this.key] },
+      }
+    );
   }
 }
