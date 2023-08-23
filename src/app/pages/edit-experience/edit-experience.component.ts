@@ -15,17 +15,34 @@ export class EditExperienceComponent {
   constructor(private crudSrv: CrudService, private router: Router) {}
   formData!: IExperience;
   user!: any;
-  expId: any = this.router.url;
+  expId: string = this.router.url.slice(-24);
 
   ngOnInit() {
-    console.log('expId', this.expId.slice(-24));
+    console.log('expId', this.expId);
+    this.crudSrv.getSingleExp(this.expId).subscribe((res) => {
+      console.log('res', res);
+      console.log('this.form', this.form);
+      res.startDate = res.startDate.slice(0, 10);
+      res.endDate = res.endDate!.slice(0, 10);
+      this.form.control.setValue(res);
+    });
   }
 
+  delete() {
+    this.crudSrv.deleteExperience(this.expId).subscribe((res) => {
+      console.log('ok esperienza eliminata');
+    });
+    this.router.navigate(['user']);
+  }
+
+  //da fare!!! da come errore Unauthorized??? info Lidia
   submit(f: NgForm) {
     this.formData = f.form.value;
     console.log('this Form', this.formData, typeof this.formData);
-    // this.crudSrv.editExperience(this.formData).subscribe((res) => {
-    //   console.log('NEW exp in expComp:', res);
-    // });
+    this.crudSrv
+      .updateExperience(this.formData, this.expId)
+      .subscribe((res) => {
+        console.log('NEW exp in expComp:', res);
+      });
   }
 }

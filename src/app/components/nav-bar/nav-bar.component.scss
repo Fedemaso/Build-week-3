@@ -1,14 +1,23 @@
-img {
-  margin-right: 1, 5em !important;
+nav {
+  border-bottom: 1px solid rgb(207, 207, 207);
 }
-#ciao {
+
+ul {
+  border-right: 1px solid rgb(207, 207, 207);
+}
+
+img {
+  // margin-right: 1, 5em !important;
+}
+#logo {
   width: 35px;
   margin-right: 1, 5em !important;
 }
 
 li {
-  margin: 0 1.2em;
+  margin: 0 1em;
   cursor: pointer;
+  font-size: 0.8em;
 }
 
 .search {
@@ -27,6 +36,7 @@ input {
   margin: 0 1.2em;
   p {
     margin: 0;
+    font-size: 0.8em;
   }
 
   a {

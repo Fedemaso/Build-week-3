@@ -48,6 +48,7 @@ import { EditExperienceComponent } from './pages/edit-experience/edit-experience
   imports: [
     BrowserModule,
     AppRoutingModule,
+    //NgModule, //se attivato manda in crash il form di exit exp
     NgbModule,
     HttpClientModule,
     NgbDatepickerModule,

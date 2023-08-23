@@ -5,6 +5,56 @@
     </div>
     <div class="modal-body">
       <form (ngSubmit)="submit(f)" #f="ngForm">
+        <div class="d-none">
+          <label for="role">id</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="id"
+            ngModel
+            name="_id"
+          />
+          <label for="role">username</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="username"
+            ngModel
+            name="username"
+          />
+          <label for="role">user</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="user"
+            ngModel
+            name="user"
+          />
+          <label for="role">__v</label>
+          <input
+            class="form-control"
+            type="text"
+            placeholder="__v"
+            ngModel
+            name="__v"
+          />
+          <label for="area">Creato il</label>
+          <input
+            class="form-control"
+            type="date"
+            placeholder="Creato il"
+            ngModel
+            name="createdAt"
+          />
+          <label for="area">Modificato il</label>
+          <input
+            class="form-control"
+            type="date"
+            placeholder="Modificato il"
+            ngModel
+            name="updatedAt"
+          />
+        </div>
         <label for="role">Ruolo</label>
         <input
           class="form-control"
@@ -62,9 +112,12 @@
         />
       </form>
     </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="submit(f)">
-        Save
+    <div class="modal-footer d-flex justify-content-between mt-3">
+      <button type="button" class="btn btn-success" (click)="submit(f)">
+        Salva
+      </button>
+      <button type="button" class="btn btn-danger" (click)="delete()">
+        Elimina
       </button>
     </div>
   </div>
