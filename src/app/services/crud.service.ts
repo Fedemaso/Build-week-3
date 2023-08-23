@@ -89,10 +89,9 @@ export class CrudService {
     );
   }
 
-  //NB come fa a funzionare senza inviare data nell'url... info epicode
   updateExperience(data: IExperience, id: string) {
     console.log('this.authSubject.value?._id', this.authSubject.value?._id);
-    console.log('New data', data);
+    //perchè è null se nelle altre chiamate funziona???
 
     return this.http.put<IExperience>(
       this.apiUrl +
@@ -100,6 +99,7 @@ export class CrudService {
         this.authSubject.value?._id +
         '/experiences/' +
         id,
+      data,
       {
         headers: { Authorization: [this.key] },
       }
