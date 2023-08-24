@@ -11,15 +11,17 @@
       class="rounded-circle rounded-0"
       alt="..."
     />
-    <h5 class="card-title">{{ user.name }} {{ user.surname }}</h5>
+    <a routerLink="user">
+      <h5 class="card-title">{{ user.name }} {{ user.surname }}</h5></a
+    >
     <p class="card-text">{{ user.title }}</p>
     <hr />
     <div class="text-start">
-      <p class="mb-0">collegamenti</p>
-      <p><b>espandi la tua rete</b></p>
+      <p class="mb-0">Collegamenti</p>
+      <p><b>Espandi la tua rete</b></p>
     </div>
     <hr />
-    <p class="text-start">accedi a strumenti e informazioni in esclusiva</p>
+    <p class="text-start">Accedi a strumenti e informazioni in esclusiva</p>
     <hr />
     <div class="d-flex">
       <svg
@@ -27,7 +29,7 @@
         width="16"
         height="16"
         fill="currentColor"
-        class="bi bi-sticky-fill"
+        class="bi bi-sticky-fill me-2"
         viewBox="0 0 16 16"
       >
         <path
@@ -35,7 +37,7 @@
         />
       </svg>
       <p class="card-text">
-        <small class="text-body-secondary">i miei elementi</small>
+        <small class="text-body-secondary">I miei elementi</small>
       </p>
     </div>
   </div>
