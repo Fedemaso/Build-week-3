@@ -1,0 +1,59 @@
+<div>
+  <div class="d-flex align-items-center">
+    <img src="{{ post.user.image }}" class="profileImage" alt="profile-pic" />
+    <p class="m-0 ps-2">{{ post.user.name }} {{ post.user.surname }}</p>
+  </div>
+  <p>Creato il: {{ post.createdAt | date : "longDate" }}</p>
+  <p>{{ post.text }}</p>
+</div>
+<div>
+  <a (click)="openComment(comment, post._id)"
+    ><i class="fa-regular fa-comment-dots"></i> Commenta</a
+  >
+</div>
+<div *ngIf="postComments.length > 0">
+  Commenti:
+  <div *ngFor="let comment of postComments">{{ comment.comment }}</div>
+</div>
+
+<!-- MODALE AGGIUNGI COMMENTO-->
+<ng-template #comment let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Aggiungi commento</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form (ngSubmit)="submitComment(fc)" #fc="ngForm">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Aggiungi commento"
+        ngModel
+        name="comment"
+      />
+      <input
+        class="form-control"
+        type="number"
+        placeholder="Dai un voto da 1 a 5"
+        ngModel
+        name="rate"
+      />
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="submitComment(fc)"
+      (click)="modal.dismiss()"
+    >
+      Salva
+    </button>
+  </div>
+</ng-template>
+<!-- FINE MODALE AGGIUNGI COMMENTO -->

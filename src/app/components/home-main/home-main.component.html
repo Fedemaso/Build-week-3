@@ -24,18 +24,7 @@
   </div>
 </div>
 <div *ngFor="let post of allPost" class="card mb-2 p-2 text-start">
-  <div></div>
-  <div>
-    <div class="d-flex align-items-center">
-      <img src="{{ post.user.image }}" class="profileImage" alt="profile-pic" />
-      <p class="m-0 ps-2">{{ post.user.name }} {{ post.user.surname }}</p>
-    </div>
-    <p>Creato il: {{ post.createdAt | date : "longDate" }}</p>
-    <p>{{ post.text }}</p>
-  </div>
-  <div>
-    <a><i class="fa-regular fa-comment-dots"></i> Commenta</a>
-  </div>
+  <app-home-comment [post]="post"></app-home-comment>
 </div>
 
 <!-- MODALE AGGIUNGI POST-->
