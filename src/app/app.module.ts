@@ -14,10 +14,8 @@ import { RisorseComponent } from './components/risorse/risorse.component';
 import { AttivitaComponent } from './components/attivita/attivita.component';
 import { EsperienzaComponent } from './components/esperienza/esperienza.component';
 import { FormazioneComponent } from './components/formazione/formazione.component';
-import { CompetenzeComponent } from './components/competenze/competenze.component';
 import { LingueComponent } from './components/lingue/lingue.component';
 import { InteressiComponent } from './components/interessi/interessi.component';
-import { CauseComponent } from './components/cause/cause.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -43,10 +41,8 @@ import { HomeCommentComponent } from './components/home-comment/home-comment.com
     AttivitaComponent,
     EsperienzaComponent,
     FormazioneComponent,
-    CompetenzeComponent,
     LingueComponent,
     InteressiComponent,
-    CauseComponent,
     HomeComponent,
     EditExperienceComponent,
     HomeProfileComponent,
