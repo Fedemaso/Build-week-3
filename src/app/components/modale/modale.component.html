@@ -1,0 +1,122 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Modifica utente</h4>
+  <!-- <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="modal.dismiss('Cross click')"
+  ></button> -->
+</div>
+<div class="modal-body">
+  <form (ngSubmit)="submit(fu)" #fu="ngForm">
+    <label for="name">Nome</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Nome"
+      ngModel
+      name="name"
+    />
+    <label for="surname">Cognome</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Cognome"
+      ngModel
+      name="surname"
+    />
+
+    <label for="email">email</label>
+    <div class="input-group">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="email"
+        ngModel
+        name="email"
+      />
+    </div>
+    <label for="title">Titolo</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Titolo"
+      ngModel
+      name="title"
+    />
+    <label for="bio">Bio</label>
+    <div class="input-group">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Bio"
+        name="bio"
+        ngModel
+      />
+    </div>
+
+    <label for="area">Luogo/Territorio</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Luogo/Territorio"
+      ngModel
+      name="area"
+    />
+    <div class="d-none">
+      <label for="role">id</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="id"
+        ngModel
+        name="_id"
+      />
+      <label for="role">username</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="username"
+        ngModel
+        name="username"
+      />
+      <label for="role">__v</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="__v"
+        ngModel
+        name="__v"
+      />
+      <label for="role">image</label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="image"
+        ngModel
+        name="image"
+      />
+      <label for="area">Creato il</label>
+      <input
+        class="form-control"
+        type="date"
+        placeholder="Creato il"
+        ngModel
+        name="createdAt"
+      />
+      <label for="area">Modificato il</label>
+      <input
+        class="form-control"
+        type="date"
+        placeholder="Modificato il"
+        ngModel
+        name="updatedAt"
+      />
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="submit(fu)">
+    Salva modifiche utente
+  </button>
+</div>

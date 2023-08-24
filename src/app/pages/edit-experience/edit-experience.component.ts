@@ -2,7 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { IExperience } from 'src/app/interfaces/iexperience';
 import { CrudService } from 'src/app/services/crud.service';
-import { HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,10 +17,10 @@ export class EditExperienceComponent {
   expId: string = this.router.url.slice(-24);
 
   ngOnInit() {
-    console.log('expId', this.expId);
+    // console.log('expId', this.expId);
     this.crudSrv.getSingleExp(this.expId).subscribe((res) => {
-      console.log('res', res);
-      console.log('this.form', this.form);
+      // console.log('res', res);
+      // console.log('this.form', this.form);
       res.startDate = res.startDate.slice(0, 10);
       res.endDate = res.endDate!.slice(0, 10);
       this.form.control.setValue(res);
@@ -37,7 +36,7 @@ export class EditExperienceComponent {
 
   submit(f: NgForm) {
     this.formData = f.form.value;
-    console.log('this Form', this.formData, typeof this.formData);
+    // console.log('this Form', this.formData, typeof this.formData);
     this.crudSrv
       .updateExperience(this.formData, this.expId)
       .subscribe((res) => {
