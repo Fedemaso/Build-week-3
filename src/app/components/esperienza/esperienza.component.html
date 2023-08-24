@@ -104,7 +104,6 @@
             <p>I post che condividi appariranno qui</p>
           </div>
           <div class="text-start w-100">
-            <h2>Lista esperienze</h2>
             <div *ngFor="let exp of allTheExperiences" class="expContainer">
               <div class="d-flex justify-content-between">
                 <p>Compagnia: {{ exp.company }}</p>
@@ -116,8 +115,8 @@
                 </a>
               </div>
               <p>Ruolo: {{ exp.role }}</p>
-              <p>Inizio esperienza: {{ exp.startDate | date }}</p>
-              <p>Fine esperienza: {{ exp.endDate | date }}</p>
+              <p>Inizio esperienza: {{ exp.startDate | date : "longDate" }}</p>
+              <p>Fine esperienza: {{ exp.endDate | date : "longDate" }}</p>
               <p>Descrizione: {{ exp.description }}</p>
               <p>Area: {{ exp.area }}</p>
               <p>Immagine:</p>

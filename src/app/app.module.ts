@@ -23,6 +23,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { EditExperienceComponent } from './pages/edit-experience/edit-experience.component';
+import { HomeProfileComponent } from './components/home-profile/home-profile.component';
+import { HomeRecentiComponent } from './components/home-recenti/home-recenti.component';
+import { HomeLinkedinNewsComponent } from './components/home-linkedin-news/home-linkedin-news.component';
+import { HomeMainComponent } from './components/home-main/home-main.component';
 
 @NgModule({
   declarations: [
@@ -44,10 +48,15 @@ import { EditExperienceComponent } from './pages/edit-experience/edit-experience
     CauseComponent,
     HomeComponent,
     EditExperienceComponent,
+    HomeProfileComponent,
+    HomeRecentiComponent,
+    HomeLinkedinNewsComponent,
+    HomeMainComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    //NgModule, //se attivato manda in crash il form di exit exp
     NgbModule,
     HttpClientModule,
     NgbDatepickerModule,

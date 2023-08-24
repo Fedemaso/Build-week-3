@@ -14,7 +14,7 @@ import { IPost } from '../interfaces/ipost';
 export class CrudService {
   private apiUrl: string = environment.BE_URL;
   private key: string = environment.API_KEY;
-  private authSubject = new BehaviorSubject<null | IUser>(null);
+  private authSubject = new BehaviorSubject<IUser | null>(null);
   private authExp = new BehaviorSubject<null | IExperience>(null);
   private authPost = new BehaviorSubject<null | IPost>(null);
   user$ = this.authSubject.asObservable();
@@ -76,39 +76,43 @@ export class CrudService {
     );
   }
 
-  getSingleExp(data: IExperience)  {
+  getSingleExp(id: string) {
     return this.http.get<IExperience>(
       this.apiUrl +
         'profile/' +
         this.authSubject.value?._id +
         '/experiences/' +
-        this.authExp.value?._id,
+        id,
       {
         headers: { Authorization: [this.key] },
       }
     );
   }
 
-  updateExperience(data: IExperience)  {
-    return this.http.get<IExperience>(
+  updateExperience(data: IExperience, id: string) {
+    console.log('this.authSubject.value?._id', this.authSubject.value?._id);
+    //perchè è null se nelle altre chiamate funziona???
+
+    return this.http.put<IExperience>(
       this.apiUrl +
         'profile/' +
         this.authSubject.value?._id +
         '/experiences/' +
-        this.authExp.value?._id,
+        id,
+      data,
       {
         headers: { Authorization: [this.key] },
       }
     );
   }
 
-  deleteExperience() {
+  deleteExperience(id: string) {
     return this.http.delete(
       this.apiUrl +
         'profile/' +
         this.authSubject.value?._id +
         '/experiences/' +
-        this.authExp.value?._id,
+        id,
       {
         headers: { Authorization: [this.key] },
       }
