@@ -31,25 +31,18 @@ export class EsperienzaComponent {
     this.crudSrv.user$.subscribe((res) => {
       this.user = res;
       console.log('RES', this.user);
-      this.crudSrv.getAllTheExp(this.user._id).subscribe((res) => {
-        this.allTheExperiences = res;
-        console.log('Esperienza', this.allTheExperiences);
-      });
+      if (this.user) {
+        this.crudSrv.getAllTheExp(this.user._id).subscribe((res) => {
+          this.allTheExperiences = res;
+          console.log('Esperienza', this.allTheExperiences);
+        });
+      }
     });
   }
 
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' });
   }
-  // private getDismissReason(reason: any): string {
-  //   if (reason === ModalDismissReasons.ESC) {
-  //     return 'by pressing ESC';
-  //   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-  //     return 'by clicking on a backdrop';
-  //   } else {
-  //     return `with: ${reason}`;
-  //   }
-  // }
 
   submit(f: NgForm) {
     this.formData = f.form.value;

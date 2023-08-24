@@ -1,17 +1,24 @@
 <div class="card mb-2 p-4">
   <div class="profileImageContainer">
-    <img src="{{ user.image }}" class="profileImage" alt="profile-pic" />
+    <img src="{{ user?.image || '' }}" class="profileImage" alt="profile-pic" />
   </div>
   <div class="card-body">
     <div class="d-flex flex-column align-items-start">
-      <h5 class="card-title">{{ user.name }} {{ user.surname }}</h5>
+      <h5 class="card-title">
+        {{ user?.name || "" }} {{ user?.surname || "" }}
+        <i
+          (click)="open()"
+          class="fas fa-pencil-alt me-2"
+          style="color: #999b9f"
+        ></i>
+      </h5>
       <p class="card-text">
-        {{ user.title }}
+        {{ user?.title || "" }}
       </p>
-      <p class="card-text">{{ user.bio }}</p>
+      <p class="card-text">{{ user?.bio || "" }}</p>
       <div class="d-flex">
         <p class="card-text area">
-          {{ user.area }}
+          {{ user?.area || "" }}
         </p>
         <a class="info card-text">Informazioni di contatto</a>
       </div>

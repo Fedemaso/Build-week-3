@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { IUser } from 'src/app/interfaces/iuser';
+import { ModaleComponent } from './../modale/modale.component';
+import { IUser } from './../../interfaces/iuser';
+import { Component, ViewChild, ViewChildren } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CrudService } from 'src/app/services/crud.service';
 
 @Component({
@@ -9,21 +11,25 @@ import { CrudService } from 'src/app/services/crud.service';
   styleUrls: ['./user-info.component.scss'],
 })
 export class UserInfoComponent {
-  constructor(private crudSrv: CrudService) {}
-
-  user!: any;
-  allUsers!: any;
-
+  // @ViewChild('fu') form!: NgForm;
+  // @ViewChild(NgbModal)
+  // form!: NgForm;
+  constructor(private crudSrv: CrudService, private modalService: NgbModal) {}
+  formData!: IUser;
+  user!: IUser;
+  allUsers!: IUser[];
 
   ngOnInit() {
     this.crudSrv.getMeUsers().subscribe((res) => {
       this.user = res;
-      console.log(this.user);
     });
+  }
 
-    // this.crudSrv.getAllUsers().subscribe((res) => {
-    //   this.allUsers = res;
-    //   console.log(this.allUsers)
-    // })
+  open() {
+    console.log('this.user', this.user);
+
+    this.modalService.open(ModaleComponent, {
+      ariaLabelledBy: 'modal-basic-title',
+    });
   }
 }
