@@ -1,5 +1,5 @@
 export interface IComments{
-  "comment": string
+  "comment": string,
   "rate": string,
   "elementId": string
 }

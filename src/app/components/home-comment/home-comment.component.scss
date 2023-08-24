@@ -13,12 +13,16 @@ a {
 }
 
 .postContainer {
-  border: 1px solid rgb(209, 209, 209);
+  border: 1px outset rgb(209, 209, 209);
   padding:8px;
   border-radius: 10px;
 }
 
 .singleComment{
   margin-top: 5px;
-  border: 1px outset rgb(209, 209, 209);
+  border: 1px outset;
+  border-radius: 10px;
+  padding: 10px;
+  border-color: lightgrey;
+  font-family: math;
 }
