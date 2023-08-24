@@ -2,6 +2,12 @@ hr {
   margin-top: 0;
 }
 
-.card {
-  // width: 400px !important; NO fa sbordare tutto sulla destra, mai usare px important
+.avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 50px;
+}
+
+.card-text {
+  font-size: 0.9em;
 }
