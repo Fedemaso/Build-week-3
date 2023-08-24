@@ -30,7 +30,7 @@ export class EsperienzaComponent {
   ngOnInit() {
     this.crudSrv.user$.subscribe((res) => {
       this.user = res;
-      console.log('RES', this.user); //da errore null??
+      console.log('RES', this.user);
       this.crudSrv.getAllTheExp(this.user._id).subscribe((res) => {
         this.allTheExperiences = res;
         console.log('Esperienza', this.allTheExperiences);

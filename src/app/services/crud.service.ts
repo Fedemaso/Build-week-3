@@ -126,7 +126,7 @@ export class CrudService {
   }
 
   postAPost(data: IPost) {
-    return this.http.post<IPost>(this.apiUrl + 'posts/', {
+    return this.http.post<IPost>(this.apiUrl + 'posts/', data, {
       headers: { Authorization: [this.key] },
     });
   }
