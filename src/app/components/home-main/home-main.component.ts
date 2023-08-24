@@ -1,3 +1,4 @@
+import { IComments } from './../../interfaces/icomments';
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -11,12 +12,14 @@ import { CrudService } from 'src/app/services/crud.service';
 })
 export class HomeMainComponent {
   @ViewChild('f', { static: true }) form!: NgForm;
-  @ViewChild('fc', { static: true }) formC!: NgForm;
+
   constructor(private crudSrv: CrudService, private modalService: NgbModal) {}
   user!: any;
   allPost!: IPost[];
   formData!: IPost;
-  // formComment!: ICo
+  formComment!: IComments;
+  postIdToComment!: string;
+  postComments!: IComments[];
 
   ngOnInit() {
     this.crudSrv.getMeUsers().subscribe((res) => {
@@ -40,5 +43,4 @@ export class HomeMainComponent {
       console.log('NEW Post in home-main:', res);
     });
   }
-  submitComment(fc: NgForm) {}
 }

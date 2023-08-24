@@ -27,6 +27,7 @@ import { HomeProfileComponent } from './components/home-profile/home-profile.com
 import { HomeRecentiComponent } from './components/home-recenti/home-recenti.component';
 import { HomeLinkedinNewsComponent } from './components/home-linkedin-news/home-linkedin-news.component';
 import { HomeMainComponent } from './components/home-main/home-main.component';
+import { HomeCommentComponent } from './components/home-comment/home-comment.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { HomeMainComponent } from './components/home-main/home-main.component';
     HomeRecentiComponent,
     HomeLinkedinNewsComponent,
     HomeMainComponent,
+    HomeCommentComponent,
   ],
   imports: [
     BrowserModule,

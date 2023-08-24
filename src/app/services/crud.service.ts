@@ -7,6 +7,7 @@ import { IExperience } from '../interfaces/iexperience';
 import { BehaviorSubject, map, tap } from 'rxjs';
 import { Form } from '@angular/forms';
 import { IPost } from '../interfaces/ipost';
+import { IComments } from '../interfaces/icomments';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +15,7 @@ import { IPost } from '../interfaces/ipost';
 export class CrudService {
   private apiUrl: string = environment.BE_URL;
   private key: string = environment.API_KEY;
+  private keyComment: string = environment.API_KEY_COMMENT;
   private authSubject = new BehaviorSubject<IUser | null>(null);
   private authExp = new BehaviorSubject<null | IExperience>(null);
   private authPost = new BehaviorSubject<null | IPost>(null);
@@ -151,6 +153,18 @@ export class CrudService {
   deletePost() {
     return this.http.delete(this.apiUrl + 'posts/' + this.authPost.value?._id, {
       headers: { Authorization: [this.key] },
+    });
+  }
+
+  postComment(formComment: IComments) {
+    return this.http.put(this.apiUrl + 'comments/', formComment, {
+      headers: { Authorization: [this.keyComment] },
+    });
+  }
+
+  getComment(idPost: string) {
+    return this.http.get<IComments[]>(this.apiUrl + 'comments/' + idPost, {
+      headers: { Authorization: [this.keyComment] },
     });
   }
 }
