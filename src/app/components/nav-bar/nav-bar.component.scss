@@ -27,13 +27,11 @@ input {
   background-color: aliceblue;
 }
 
-// .cursore {
-// }
 .dropdown {
   margin: 0 1.2em;
   p {
     margin: 0;
-    font-size: 0.8em;
+    font-size: 1em;
   }
 
   a {
@@ -43,4 +41,9 @@ input {
     display: flex;
     flex-direction: column;
   }
+}
+
+.hover-effect:hover {
+  background-color: #f0f0f0;
+  color: #333;
 }
