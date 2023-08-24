@@ -157,7 +157,7 @@ export class CrudService {
   }
 
   postComment(formComment: IComments) {
-    return this.http.put(this.apiUrl + 'comments/', formComment, {
+    return this.http.post(this.apiUrl + 'comments/', formComment, {
       headers: { Authorization: [this.keyComment] },
     });
   }
