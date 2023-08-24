@@ -125,8 +125,8 @@ export class CrudService {
     });
   }
 
-  postAPost() {
-    return this.http.post<IPost>(this.apiUrl + 'posts/', {
+  postAPost(data: IPost) {
+    return this.http.post<IPost>(this.apiUrl + 'posts/', data, {
       headers: { Authorization: [this.key] },
     });
   }
@@ -140,7 +140,7 @@ export class CrudService {
     );
   }
 
-  updatePost() {
+  updatePost(data: IPost) {
     return this.http.put<IPost>(
       this.apiUrl + 'posts/' + this.authPost.value?._id,
       {
