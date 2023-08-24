@@ -34,7 +34,9 @@
     <p>{{ post.text }}</p>
   </div>
   <div>
-    <a><i class="fa-regular fa-comment-dots"></i> Commenta</a>
+    <a (click)="open(comment)"
+      ><i class="fa-regular fa-comment-dots"></i> Commenta</a
+    >
   </div>
 </div>
 
@@ -72,3 +74,45 @@
   </div>
 </ng-template>
 <!-- FINE MODALE AGGIUNGI POST -->
+
+<!-- MODALE AGGIUNGI COMMENTO-->
+<ng-template #comment let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Aggiungi commento</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form (ngSubmit)="submit(fc)" #fc="ngForm">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Aggiungi commento"
+        ngModel
+        name="comment"
+      />
+      <input
+        class="form-control"
+        type="number"
+        placeholder="Dai un voto da 1 a 5"
+        ngModel
+        name="rate"
+      />
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="submitComment(fc)"
+      (click)="modal.dismiss()"
+    >
+      Salva
+    </button>
+  </div>
+</ng-template>
+<!-- FINE MODALE AGGIUNGI COMMENTO -->

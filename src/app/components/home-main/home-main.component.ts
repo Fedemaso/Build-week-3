@@ -11,10 +11,12 @@ import { CrudService } from 'src/app/services/crud.service';
 })
 export class HomeMainComponent {
   @ViewChild('f', { static: true }) form!: NgForm;
+  @ViewChild('fc', { static: true }) formC!: NgForm;
   constructor(private crudSrv: CrudService, private modalService: NgbModal) {}
   user!: any;
   allPost!: IPost[];
   formData!: IPost;
+  // formComment!: ICo
 
   ngOnInit() {
     this.crudSrv.getMeUsers().subscribe((res) => {
@@ -23,6 +25,7 @@ export class HomeMainComponent {
     });
     this.crudSrv.getAllThePost().subscribe((res) => {
       this.allPost = res.slice(-10);
+      this.allPost.reverse();
       console.log(this.allPost);
     });
   }
@@ -30,7 +33,6 @@ export class HomeMainComponent {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' });
   }
 
-  //da FARE!!!
   submit(f: NgForm) {
     this.formData = f.form.value;
     console.log('this Form', this.formData, typeof this.formData);
@@ -38,4 +40,5 @@ export class HomeMainComponent {
       console.log('NEW Post in home-main:', res);
     });
   }
+  submitComment(fc: NgForm) {}
 }
