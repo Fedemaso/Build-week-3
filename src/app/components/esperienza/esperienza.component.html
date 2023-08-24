@@ -105,26 +105,50 @@
           </div>
           <div class="text-start w-100">
             <div *ngFor="let exp of allTheExperiences" class="expContainer">
-              <div class="d-flex justify-content-between">
-                <p>Compagnia: {{ exp.company }}</p>
-                <a routerLink="{{ exp._id }}">
-                  <i
-                    class="fas fa-pencil-alt me-2 ps-3 cursore editExp"
-                    style="color: #999b9f"
-                  ></i>
-                </a>
+              <div class="d-flex">
+                <div>
+                  <img
+                    src="https://us.123rf.com/450wm/seamartini/seamartini1401/seamartini140100172/25157410-abstract-illustrazione-in-due-colori-di-una-skyline-urbano-con-grattacieli-e-edifici-con.jpg?ver=6"
+                    alt="logo-compagnia"
+                    width="60px"
+                    height="60px"
+                  />
+                </div>
+                <div class="d-flex flex-column ms-3">
+                  <div>
+                    <p class="mb-0 fw-bold">Compagnia: {{ exp.company }}</p>
+                  </div>
+                  <div>
+                    <p class="mb-0">Ruolo: {{ exp.role }}</p>
+                  </div>
+                  <div>
+                    <p class="mb-0 text-secondary">
+                      Inizio esperienza: {{ exp.startDate | date : "longDate" }}
+                    </p>
+                  </div>
+                  <div>
+                    <p class="mb-0 text-secondary">
+                      Fine esperienza: {{ exp.endDate | date : "longDate" }}
+                    </p>
+                  </div>
+                  <div>
+                    <p class="mb-0 text-secondary">
+                      Descrizione: {{ exp.description }}
+                    </p>
+                  </div>
+                  <div>
+                    <p class="mb-0 text-secondary">Area: {{ exp.area }}</p>
+                  </div>
+                </div>
+                <div>
+                  <a routerLink="{{ exp._id }}">
+                    <i
+                      class="fas fa-pencil-alt me-2 ps-3 cursore editExp"
+                      style="color: #999b9f"
+                    ></i>
+                  </a>
+                </div>
               </div>
-              <p>Ruolo: {{ exp.role }}</p>
-              <p>Inizio esperienza: {{ exp.startDate | date : "longDate" }}</p>
-              <p>Fine esperienza: {{ exp.endDate | date : "longDate" }}</p>
-              <p>Descrizione: {{ exp.description }}</p>
-              <p>Area: {{ exp.area }}</p>
-              <p>Immagine:</p>
-              <img
-                src="{{ exp.image }}"
-                alt=""
-                style="width: 100px; height: 100px"
-              />
             </div>
           </div>
         </div>
