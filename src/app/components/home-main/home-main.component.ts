@@ -1,3 +1,4 @@
+import { IComments } from './../../interfaces/icomments';
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -11,10 +12,14 @@ import { CrudService } from 'src/app/services/crud.service';
 })
 export class HomeMainComponent {
   @ViewChild('f', { static: true }) form!: NgForm;
+
   constructor(private crudSrv: CrudService, private modalService: NgbModal) {}
   user!: any;
   allPost!: IPost[];
   formData!: IPost;
+  formComment!: IComments;
+  postIdToComment!: string;
+  postComments!: IComments[];
 
   ngOnInit() {
     this.crudSrv.getMeUsers().subscribe((res) => {
@@ -23,6 +28,7 @@ export class HomeMainComponent {
     });
     this.crudSrv.getAllThePost().subscribe((res) => {
       this.allPost = res.slice(-10);
+      this.allPost.reverse();
       console.log(this.allPost);
     });
   }
@@ -30,7 +36,6 @@ export class HomeMainComponent {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' });
   }
 
-  //da FARE!!!
   submit(f: NgForm) {
     this.formData = f.form.value;
     console.log('this Form', this.formData, typeof this.formData);

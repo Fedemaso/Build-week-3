@@ -14,10 +14,8 @@ import { RisorseComponent } from './components/risorse/risorse.component';
 import { AttivitaComponent } from './components/attivita/attivita.component';
 import { EsperienzaComponent } from './components/esperienza/esperienza.component';
 import { FormazioneComponent } from './components/formazione/formazione.component';
-import { CompetenzeComponent } from './components/competenze/competenze.component';
 import { LingueComponent } from './components/lingue/lingue.component';
 import { InteressiComponent } from './components/interessi/interessi.component';
-import { CauseComponent } from './components/cause/cause.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -27,6 +25,7 @@ import { HomeProfileComponent } from './components/home-profile/home-profile.com
 import { HomeRecentiComponent } from './components/home-recenti/home-recenti.component';
 import { HomeLinkedinNewsComponent } from './components/home-linkedin-news/home-linkedin-news.component';
 import { HomeMainComponent } from './components/home-main/home-main.component';
+import { HomeCommentComponent } from './components/home-comment/home-comment.component';
 
 @NgModule({
   declarations: [
@@ -42,16 +41,15 @@ import { HomeMainComponent } from './components/home-main/home-main.component';
     AttivitaComponent,
     EsperienzaComponent,
     FormazioneComponent,
-    CompetenzeComponent,
     LingueComponent,
     InteressiComponent,
-    CauseComponent,
     HomeComponent,
     EditExperienceComponent,
     HomeProfileComponent,
     HomeRecentiComponent,
     HomeLinkedinNewsComponent,
     HomeMainComponent,
+    HomeCommentComponent,
   ],
   imports: [
     BrowserModule,

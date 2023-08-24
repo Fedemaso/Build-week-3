@@ -35,7 +35,6 @@ export class EditExperienceComponent {
     this.router.navigate(['user']);
   }
 
-  //da fare!!! da come errore Unauthorized??? info Lidia
   submit(f: NgForm) {
     this.formData = f.form.value;
     console.log('this Form', this.formData, typeof this.formData);
