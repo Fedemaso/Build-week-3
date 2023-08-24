@@ -1,5 +1,4 @@
 .homeNews{
-  width : 350px;
   padding: 16px;
   background-color: white;
   border-radius: 10px;
@@ -13,9 +12,6 @@
   align-items: start;
 }
 
-.singleLi {
-  width: 300px
-}
 
 .singleLi :hover {
   background-color: rgb(204, 200, 200);
@@ -31,10 +27,17 @@ ul {
 
 .banner {
   margin-top: 20px;
-  width:350px;
-  height: 280px;
 }
 
 img{
   border-radius: 10px;
+}
+
+a{
+  cursor: pointer;
+}
+
+a:hover{
+  color: dodgerblue !important;
+  text-decoration: underline !important;
 }
