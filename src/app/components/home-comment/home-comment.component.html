@@ -16,11 +16,16 @@
       ><i class="fa-regular fa-comment-dots"></i> Commenta</a
     >
   </div>
-  <div class="mt-2" *ngIf="postComments.length > 0">
+  <a (click)="showComments(post._id)">Mostra Commenti</a>
+  <div class="mt-2" *ngIf="postComments">
     Commenti:
     <div class="singleComment" *ngFor="let comment of postComments">
       {{ comment.comment }}
     </div>
+    <p *ngIf="postComments.length === 0" class="mt-2">
+      Non ci sono commenti, scrivi tu il primo
+      <i class="fa-regular fa-face-smile-wink"></i>
+    </p>
   </div>
 </div>
 

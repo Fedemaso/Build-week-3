@@ -21,7 +21,7 @@ export class HomeCommentComponent {
 
   ngOnInit() {
     this.postIdToComment = this.post._id;
-    this.showComments(this.postIdToComment);
+    // this.showComments(this.postIdToComment);
   }
   openComment(content: any, postId: string) {
     this.postIdToComment = postId;
