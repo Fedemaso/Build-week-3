@@ -3,6 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { IPost } from 'src/app/interfaces/ipost';
+import { IUser } from 'src/app/interfaces/iuser';
 import { CrudService } from 'src/app/services/crud.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class HomeMainComponent {
   @ViewChild('f', { static: true }) form!: NgForm;
 
   constructor(private crudSrv: CrudService, private modalService: NgbModal) {}
-  user!: any;
+  user!: IUser;
   allPost!: IPost[];
   formData!: IPost;
   formComment!: IComments;
