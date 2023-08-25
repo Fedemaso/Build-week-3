@@ -1,21 +1,25 @@
-.profileImageContainer  {
+.profileImageContainer {
   height: 150px;
   width: 150px;
   border-radius: 50%;
   margin-left: 20px;
   margin-top: 20px;
-  .profileImage{
+  .profileImage {
     height: 150px;
     width: 150px;
     border-radius: 50%;
   }
 }
 
+i {
+  cursor: pointer;
+}
+
 .area {
   color: grey;
 }
 
-.info{
+.info {
   color: blue;
   margin-left: 10px;
 }

@@ -53,9 +53,8 @@ export class CrudService {
   }
 
   updateUser(data: IUser) {
-    return this.http.put<IUser>(this.apiUrl, {
+    return this.http.put<IUser>(this.apiUrl + 'profile', data, {
       headers: { Authorization: [this.key] },
-      data,
     });
   }
 
