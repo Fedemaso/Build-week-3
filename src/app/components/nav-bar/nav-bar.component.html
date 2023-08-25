@@ -197,8 +197,8 @@ tu
           <li><a class="dropdown-item" href="#"></a></li>
           <div class="card" style="width: 18rem">
             <div class="card-body">
-              <h5 class="card-title">{{ user.name }} {{ user.surname }}</h5>
-              <p class="card-text">{{ user.title }}</p>
+              <h5 class="card-title">{{ user?.name }} {{ user?.surname }}</h5>
+              <p class="card-text">{{ user?.title }}</p>
               <a routerLink="user" class="btn btn-primary my-2"
                 >Visualizza profilo</a
               >
