@@ -63,7 +63,21 @@
       ngModel
       name="area"
     />
-    <div class="d-none">
+    <label for="role">image</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="image"
+      ngModel
+      name="image"
+    />
+    <button
+      (click)="isShowMore = !isShowMore"
+      class="btn btn-outline-dark mt-2"
+    >
+      Mostra altre opzioni
+    </button>
+    <div [ngClass]="isShowMore === true ? '' : 'd-none'">
       <label for="role">id</label>
       <input
         class="form-control"
@@ -71,6 +85,7 @@
         placeholder="id"
         ngModel
         name="_id"
+        disabled="true"
       />
       <label for="role">username</label>
       <input
@@ -79,6 +94,7 @@
         placeholder="username"
         ngModel
         name="username"
+        disabled="true"
       />
       <label for="role">__v</label>
       <input
@@ -87,15 +103,9 @@
         placeholder="__v"
         ngModel
         name="__v"
+        disabled="true"
       />
-      <label for="role">image</label>
-      <input
-        class="form-control"
-        type="text"
-        placeholder="image"
-        ngModel
-        name="image"
-      />
+
       <label for="area">Creato il</label>
       <input
         class="form-control"
@@ -103,6 +113,7 @@
         placeholder="Creato il"
         ngModel
         name="createdAt"
+        disabled="true"
       />
       <label for="area">Modificato il</label>
       <input
@@ -111,6 +122,7 @@
         placeholder="Modificato il"
         ngModel
         name="updatedAt"
+        disabled="true"
       />
     </div>
   </form>

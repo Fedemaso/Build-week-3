@@ -13,6 +13,8 @@ export class ModaleComponent {
   constructor(private crudSrv: CrudService, private modalService: NgbModal) {}
   @ViewChild('fu') form!: NgForm;
   formData!: IUser;
+  isShowMore: boolean = false;
+  //modale per edit user
 
   ngOnInit() {
     this.crudSrv.getMeUsers().subscribe((res) => {
