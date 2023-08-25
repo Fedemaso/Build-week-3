@@ -18,9 +18,11 @@ export class ModaleComponent {
 
   ngOnInit() {
     this.crudSrv.getMeUsers().subscribe((res) => {
+      res.updatedAt = res.updatedAt.slice(0, 10);
+      res.createdAt = res.createdAt!.slice(0, 10);
       this.form.control.setValue(res);
-      console.log('this.formData', this.form);
-      console.log('this.form', this.form);
+      // console.log('this.formData', this.form);
+      // console.log('this.form', this.form);
     });
   }
 
@@ -29,10 +31,10 @@ export class ModaleComponent {
   //DA FARE
   submit(f: NgForm) {
     this.formData = f.form.value;
-    console.log('f', f);
+    // console.log('f', f);
 
     this.crudSrv.updateUser(this.formData).subscribe((res) => {
-      console.log('NEW user data:', res);
+      // console.log('NEW user data:', res);
     });
   }
 }

@@ -18,6 +18,7 @@ export class HomeCommentComponent {
   formComment!: IComments;
   postIdToComment!: string;
   postComments!: IComments[];
+  isShowC: boolean = false;
 
   ngOnInit() {
     this.postIdToComment = this.post._id;
@@ -31,17 +32,17 @@ export class HomeCommentComponent {
   submitComment(fc: NgForm) {
     this.formComment = fc.form.value;
     this.formComment.elementId = this.postIdToComment;
-    console.log('this.formComment', this.formComment);
+    // console.log('this.formComment', this.formComment);
 
     this.crudSrv.postComment(this.formComment).subscribe((res) => {
-      console.log('ok commento inserito');
+      // console.log('ok commento inserito');
     });
   }
 
   showComments(idPost: string) {
     this.crudSrv.getComment(idPost).subscribe((res) => {
       this.postComments = res;
-      console.log('commenti', this.postComments);
+      // console.log('commenti', this.postComments);
     });
   }
 }

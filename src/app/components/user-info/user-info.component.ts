@@ -26,7 +26,7 @@ export class UserInfoComponent {
   }
 
   open() {
-    console.log('this.user', this.user);
+    // console.log('this.user', this.user);
 
     this.modalService.open(ModaleComponent, {
       ariaLabelledBy: 'modal-basic-title',

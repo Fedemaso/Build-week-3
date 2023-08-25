@@ -25,12 +25,12 @@ export class HomeMainComponent {
   ngOnInit() {
     this.crudSrv.getMeUsers().subscribe((res) => {
       this.user = res;
-      console.log(this.user);
+      // console.log(this.user);
     });
     this.crudSrv.getAllThePost().subscribe((res) => {
       this.allPost = res.slice(-10);
       this.allPost.reverse();
-      console.log(this.allPost);
+      // console.log(this.allPost);
     });
   }
   open(content: any) {
@@ -39,9 +39,9 @@ export class HomeMainComponent {
 
   submit(f: NgForm) {
     this.formData = f.form.value;
-    console.log('this Form', this.formData, typeof this.formData);
+    // console.log('this Form', this.formData, typeof this.formData);
     this.crudSrv.postAPost(this.formData).subscribe((res) => {
-      console.log('NEW Post in home-main:', res);
+      // console.log('NEW Post in home-main:', res);
     });
   }
 }

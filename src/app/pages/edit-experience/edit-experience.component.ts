@@ -29,7 +29,7 @@ export class EditExperienceComponent {
 
   delete() {
     this.crudSrv.deleteExperience(this.expId).subscribe((res) => {
-      console.log('ok esperienza eliminata');
+      // console.log('ok esperienza eliminata');
     });
     this.router.navigate(['user']);
   }

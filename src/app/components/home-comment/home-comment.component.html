@@ -27,11 +27,12 @@
       type="button"
       class="btn btn-outline-primary ms-2"
       (click)="showComments(post._id)"
+      (click)="isShowC = !isShowC"
     >
       Mostra Commenti
     </button>
   </div>
-  <div class="mt-2" *ngIf="postComments">
+  <div class="mt-2" *ngIf="postComments && isShowC">
     <div class="singleComment" *ngFor="let comment of postComments">
       {{ comment.comment }}
     </div>

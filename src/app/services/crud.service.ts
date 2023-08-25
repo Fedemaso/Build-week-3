@@ -91,7 +91,7 @@ export class CrudService {
   }
 
   updateExperience(data: IExperience, id: string) {
-    console.log('this.authSubject.value?._id', this.authSubject.value?._id);
+    // console.log('this.authSubject.value?._id', this.authSubject.value?._id);
 
     return this.http.put<IExperience>(
       this.apiUrl +
