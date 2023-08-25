@@ -7,9 +7,9 @@
   <div class="card-body">
     <img
       id="banner"
-      src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+      src="{{ user.image }}"
       class="rounded-circle rounded-0"
-      alt="..."
+      alt="image profile"
     />
     <a routerLink="/user">
       <h5 class="card-title">{{ user?.name }} {{ user?.surname }}</h5></a
