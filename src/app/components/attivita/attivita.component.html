@@ -23,8 +23,10 @@
     <div>
       <div>
         <div class="d-flex flex-column align-items-start">
-          <h6>Non hai ancora pubblicato nulla</h6>
-          <p>I post che condividi appariranno qui</p>
+          <h6 *ngIf="!myPosts">Non hai ancora pubblicato nulla</h6>
+          <div *ngFor="let post of myPosts" class="card mb-2 p-2 text-start">
+            <app-home-comment [post]="post"></app-home-comment>
+          </div>
         </div>
       </div>
     </div>
