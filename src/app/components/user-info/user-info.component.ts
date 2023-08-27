@@ -11,6 +11,7 @@ import { CrudService } from 'src/app/services/crud.service';
   styleUrls: ['./user-info.component.scss'],
 })
 export class UserInfoComponent {
+  showModal: boolean = false;
   // @ViewChild('fu') form!: NgForm;
   // @ViewChild(NgbModal)
   // form!: NgForm;

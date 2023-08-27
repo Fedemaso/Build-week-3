@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { IUser } from 'src/app/interfaces/iuser';
@@ -12,6 +12,12 @@ import { CrudService } from 'src/app/services/crud.service';
 export class ModaleComponent {
   constructor(private crudSrv: CrudService, private modalService: NgbModal) {}
   @ViewChild('fu') form!: NgForm;
+  @Output()
+  onClose: EventEmitter<boolean> = new EventEmitter();
+
+  closeModal() {
+    this.onClose.emit(true);
+  }
   formData!: IUser;
   isShowMore: boolean = false;
   //modale per edit user
@@ -35,6 +41,10 @@ export class ModaleComponent {
 
     this.crudSrv.updateUser(this.formData).subscribe((res) => {
       // console.log('NEW user data:', res);
+      this.dismiss();
     });
+  }
+  dismiss() {
+    this.modalService.dismissAll();
   }
 }
